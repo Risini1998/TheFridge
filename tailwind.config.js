@@ -13,7 +13,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       spacing: {
-        '353px': '353px',
+        '353px': '303px',
         '90px': '90px',
         '100px': '100px',
         '70px' : '70px',
@@ -21,6 +21,8 @@ module.exports = {
         '170px' : '170px',
         '238px' : '238px',
         '40px' : '40px',
+        '290px' : '290px',
+        '230px' : '230px'
 
       },
       fontWeight: {
@@ -67,6 +69,7 @@ module.exports = {
       },
       colors: {
         '#E3E9F1': '#E3E9F1',
+        primary: '#00598D'
       }
     },
     screens: {
