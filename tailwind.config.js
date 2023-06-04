@@ -67,10 +67,6 @@ module.exports = {
         widest: '.15em',
         widest: '.3em',
       },
-      colors: {
-        '#E3E9F1': '#E3E9F1',
-        primary: '#00598D'
-      }
     },
     screens: {
       xs: '375px',

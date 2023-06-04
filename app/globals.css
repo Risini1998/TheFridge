@@ -6,6 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --background-expire: 255, 0, 0;
+  --background-expire-soon: 0, 255, 0;
+  --background-healthy: 0, 0, 255;
 }
 
 @media (prefers-color-scheme: light) {
@@ -16,6 +19,21 @@
 }
 
 body {
-  background: rgb(229, 229, 229,1);
+  background: #E5E5E5;
 }
 
+.expired{
+  background-color: #FFEBEB !important;
+  color: #752B2B;
+}
+
+.expire-soon{
+  background-color: #FFFDCC !important;
+  color: #754311;
+  ;}
+
+.healthy{
+  background-color: #DBFFE6 !important;
+  color: #23553E;
+  ;
+}
