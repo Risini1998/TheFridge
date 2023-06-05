@@ -1,15 +1,15 @@
 'use client'
-import Title from '../component/Title'
-import AddItemForm from '../component/AddItemForm'
-import ItemCard from '../component/ItemCard'
-import LoadingSpinner from '../component/LoadingSpinner';
+import Title from './Title'
+import AddItemForm from './AddItemForm'
+import ItemCard from './ItemCard'
+import LoadingSpinner from './LoadingSpinner';
 import { RootState, fetchItems } from '../redux/items/slice';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { ItemCardModel } from '../models/itemCardModel';
 
 
-export default function TheFridge() {
+export default function Fridge() {
   const items: ItemCardModel[] = useSelector((state: RootState) => state.items.items);
   const loading = useSelector((state: RootState) => state.items.itemsLoading);
   const noOfItems: number = items.length;
