@@ -10,6 +10,8 @@ export default function AddItemForm() {
 
   const [item, setItem] = useState<string>('');
   const [expiry, setExpiry] = useState<string>('');
+  const [error, setError] = useState<string>('');
+
   const dispatch = useAppDispatch();
 
   const items: ItemCardModel[] = useSelector((state: RootState) => state.items.items);
@@ -20,8 +22,9 @@ export default function AddItemForm() {
       dispatch(createItem({ title: item, expiry: expiry }));
       setItem('');
       setExpiry('');
+      setError('');
     }else{
-      alert("Already Exist the item...")
+      setError("Already Exist the item")
     }
   }
 
@@ -76,7 +79,11 @@ export default function AddItemForm() {
           </div>
         </div>
 
-        <div className='font-inter font-[#728197] font-normal text-3 tracking-normal leading-[15px] pt-3 capitalize'>
+        {error && <div className='h-[15px] leading-[15px] text-[#E63F3F] font-inter text-[10px] font-normal'>
+          {error}
+        </div>}
+
+        <div className='font-inter font-[#728197] font-normal text-[12px] tracking-normal leading-[15px] pt-3 capitalize'>
           ⚠️ We don&apos;t want more than one piece of the same food in our fridge.
         </div>
       </div>

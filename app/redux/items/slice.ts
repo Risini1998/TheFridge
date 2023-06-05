@@ -23,7 +23,7 @@ export const fetchItems: any = createAsyncThunk<ItemCardModel[]>('items/fetchIte
   }
 });
 
-export const createItem: any  = createAsyncThunk<ItemCardModel, ItemCardModel>('items/createItem', async (payload: ItemCardModel) => {
+export const createItem: any  = createAsyncThunk<ItemCardModel, ItemCardModel>('items/createItem', async (payload: ItemCardModel, { dispatch }) => {
   try {
     console.log(JSON.stringify(payload) );
     const response = await fetch('https://thefridge-api.karapincha.io/fridge', {
@@ -34,20 +34,20 @@ export const createItem: any  = createAsyncThunk<ItemCardModel, ItemCardModel>('
       },
     });
     const item = await response.json();
-    // dispatch(fetchItems());
+    dispatch(fetchItems());
     return item;
   } catch (error) {
     throw new Error('Failed to create item');
   }
 });
 
-export const deleteItem: any = createAsyncThunk<string, string>('items/deleteIItem', async (payload) => {
+export const deleteItem: any = createAsyncThunk<string, string>('items/deleteIItem', async (payload: string, { dispatch }) => {
   try {
     const response = await fetch('https://thefridge-api.karapincha.io/fridge/' + payload, {
       method: 'DELETE',      
     });
     const deleteRes = await response.json();
-    await fetchItems();
+    dispatch(fetchItems());
     return deleteRes;
   } catch (error) {
     throw new Error('Failed to delete item');
@@ -76,7 +76,6 @@ export const itemsSlice = createSlice({
         state.itemsError = null;
       })
       .addCase(createItem.fulfilled, (state, action: PayloadAction<ItemCardModel>) => {
-        // fetchItems();
       })
       .addCase(createItem.rejected, (state, action) => {
         state.itemsError = action.error.message as string;
@@ -85,7 +84,6 @@ export const itemsSlice = createSlice({
         state.itemsError = null;
       })
       .addCase(deleteItem.fulfilled, (state, action: PayloadAction<any>) => {
-      
       })
       .addCase(deleteItem.rejected, (state, action) => {
         state.itemsError = action.error.message as string;
