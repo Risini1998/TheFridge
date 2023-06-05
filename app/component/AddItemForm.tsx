@@ -2,9 +2,10 @@
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useState } from 'react';
 import { useAppDispatch } from '../redux/store';
-import { RootState, createItem } from '../redux/items/slice';
+import { RootState } from '../redux/items/slice';
 import { ItemCardModel } from '../models/itemCardModel';
 import { useSelector } from 'react-redux';
+import { createItem } from '../redux/items/trunk';
 
 export default function AddItemForm() {
 

@@ -4,7 +4,7 @@ import { IconButton } from '@mui/material';
 import { ItemCardModel, statusEnum } from '../models/itemCardModel';
 import React, { useState } from 'react';
 import { useAppDispatch } from '../redux/store';
-import { deleteItem, fetchItems } from '../redux/items/slice';
+import { deleteItem } from '../redux/items/trunk';
 
 export default function ItemCard(props: ItemCardModel) {
     const dispatch = useAppDispatch();

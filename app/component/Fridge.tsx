@@ -3,10 +3,11 @@ import Title from './Title'
 import AddItemForm from './AddItemForm'
 import ItemCard from './ItemCard'
 import LoadingSpinner from './LoadingSpinner';
-import { RootState, fetchItems } from '../redux/items/slice';
+import { RootState } from '../redux/items/slice';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { ItemCardModel } from '../models/itemCardModel';
+import { fetchItems } from '../redux/items/trunk';
 
 
 export default function Fridge() {
