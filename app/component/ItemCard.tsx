@@ -48,7 +48,7 @@ export default function ItemCard(props: ItemCardModel) {
                     <IconButton
                         aria-label="delete"
                         size="small"
-                        className={`${monthsToExpire <= 0 ? '@apply text-[#E63F3F]' : '@apply text-[#2E3849]'}`}
+                        className={`${monthsToExpire <= 0 ? 'expired-delete-icon' : 'delete-icon'}`}
                         onClick={handleClick} >
                         <DeleteOutlineIcon className="font-black" />
                     </IconButton>

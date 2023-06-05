@@ -19,7 +19,7 @@ export default function TheFridge() {
   useEffect(() => {
     dispatch(fetchItems());
   }, []);
-
+  
   return (
     <div className="flex">
       <div className=" bg-white w-screen h-[353px]" >
@@ -39,8 +39,6 @@ export default function TheFridge() {
                   <ItemCard _id={item._id} title={item.title} expiry={item.expiry} />
                 </div>)
                 }
-                  {/* <ItemCard _id='2' title='{item.title}' expiry='2022/05/02' />  */}
-
               </div></>
           }
         </div>

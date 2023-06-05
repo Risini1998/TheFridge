@@ -37,3 +37,11 @@ body {
   color: #23553E;
   ;
 }
+
+.expired-delete-icon{
+  color: #E63F3F !important;
+}
+
+.delete-icon{
+  color: #2E3849 !important;
+}

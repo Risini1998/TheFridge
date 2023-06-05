@@ -1,7 +1,5 @@
 import { ItemCardModel } from '@/app/models/itemCardModel';
-import { combineReducers, createSlice, PayloadAction, createAsyncThunk, Dispatch } from '@reduxjs/toolkit';
-
-var dispatch: Dispatch;
+import { combineReducers, createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 export interface ItemsSlice {
   items: ItemCardModel[];
@@ -36,7 +34,7 @@ export const createItem: any  = createAsyncThunk<ItemCardModel, ItemCardModel>('
       },
     });
     const item = await response.json();
-    dispatch(fetchItems());
+    // dispatch(fetchItems());
     return item;
   } catch (error) {
     throw new Error('Failed to create item');
@@ -49,7 +47,7 @@ export const deleteItem: any = createAsyncThunk<string, string>('items/deleteIIt
       method: 'DELETE',      
     });
     const deleteRes = await response.json();
-    dispatch(fetchItems());
+    await fetchItems();
     return deleteRes;
   } catch (error) {
     throw new Error('Failed to delete item');
